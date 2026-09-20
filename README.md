@@ -1,58 +1,98 @@
 # Mighty Picker
 
-A browser-based Jackbox game library and Steam launcher.
+A standalone Jackbox game library and Steam launcher for Windows. Can also be run in a browser.
 
 ## Requirements
 
-- Node.js 18 or newer
-- A modern browser
-- Steam installed with the relevant Jackbox Party Packs
+- Windows 10 or 11
+- Steam installed with Jackbox Party Packs
+- Node.js 18+ (for development and asset downloads)
+- Rust (optional, only needed if compiling from source)
 
-Node 18 or newer is required because the asset downloader uses the built-in `fetch` API.
+## Usage
 
-## Setup
+### Running the app
 
-1. Open a terminal in this folder.
-2. Download the game artwork:
+Run the compiled executable:
 
-   ```powershell
-   node download-assets.js
-   ```
+```powershell
+.\src-tauri\target\release\mighty-picker.exe
+```
 
-   The downloader reads `pack-games.json`, retrieves artwork from the Jackbox Utility server, retrieves metadata from the official Jackbox game pages, and writes the artwork to `assets/`. It also creates `assets/manifest.json` and the tracked `game-metadata.json` file.
+Or run the installer if you want start menu shortcuts:
 
-3. Start a local web server. The page should be served over HTTP so it can load the catalog and local asset manifest:
+```powershell
+.\src-tauri\target\release\bundle\nsis\Mighty Picker_1.0.0_x64-setup.exe
+```
 
-   ```powershell
-   npx http-server --cors -p 8080
-   ```
+### Development
 
-4. Open [http://127.0.0.1:8080/game-launcher.html](http://127.0.0.1:8080/game-launcher.html) in your browser.
+To run with live reload:
 
-The `assets/` directory is intentionally ignored by Git. Run the downloader again whenever you want to refresh the local artwork.
+```powershell
+npm run dev
+```
 
-## Downloader Options
+To build the executable and installer:
 
-The optional argument controls the delay between game requests in milliseconds. The default is 500 ms:
+```powershell
+npm run build
+```
+
+### Browser mode
+
+If you prefer to run it in a browser instead of the desktop app:
+
+```powershell
+npx http-server --cors -p 8080
+```
+
+Then open `http://127.0.0.1:8080/`.
+
+## Asset updates
+
+When the desktop app opens, it checks for missing game artwork and metadata in the background and downloads them automatically if connected to the internet.
+
+To download all artwork manually from the command line:
+
+```powershell
+node download-assets.js
+```
+
+You can pass a delay in milliseconds as an argument (default is 500):
 
 ```powershell
 node download-assets.js 1000
 ```
 
-Some games may not be present in the current Jackbox Utility dataset. Those games are reported as skipped, and the downloader preserves any previously downloaded asset instead of replacing it.
-
 ## Controls
 
-- Mouse: select a game, then choose **Launch on Steam**.
-- Keyboard: use arrow keys or `WASD` to move, then press `Enter` or `Space` to launch.
-- Controller: use the D-pad or left stick to move, `A` to launch, and `B` to move backward.
+### Mouse
+- Click a game card to select it.
+- Click "Launch on Steam" to start the game.
+
+### Keyboard
+- Arrow keys / WASD: navigate games
+- Enter / Space: launch selected game
+- F: open advanced filters
+- R: cycle sort order
+- Escape / Enter: dismiss modals
+
+### Controller
+- D-pad / Left stick: navigate games
+- A: launch selected game / confirm
+- B: back / dismiss modals
+- LB / RB: cycle quick filters
+- X: open advanced filters
+- Y: cycle sort order
 
 ## Files
 
-- `game-launcher.html`: the browser interface markup.
-- `game-launcher.css`: launcher layout, controls, cards, detail panel, and modal styles.
-- `game-launcher.js`: catalog loading, filtering, controller input, and Steam launch logic.
-- `pack-games.json`: the game catalog and installed-game paths.
-- `download-assets.js`: downloads official game artwork and generates the asset manifest.
-- `game-metadata.json`: generated metadata for every catalog entry, including player count, duration, features, game type, pack, language, description, and game mode.
-- `assets/`: generated local artwork; ignored by Git.
+- `src-tauri/`: Tauri v2 desktop wrapper and config
+- `game-launcher.html`: main UI markup
+- `game-launcher.css`: styling
+- `game-launcher.js`: UI logic, input handling, and Steam launcher
+- `pack-games.json`: list of packs and games
+- `game-metadata.json`: game details (player counts, duration, tags)
+- `download-assets.js`: asset downloader script
+- `assets/`: downloaded artwork and manifest

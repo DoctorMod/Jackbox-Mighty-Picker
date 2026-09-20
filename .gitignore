@@ -1,2 +1,10 @@
 # Downloaded game artwork and generated asset metadata
 /assets/
+
+# Node dependencies and build artifacts
+node_modules/
+dist/
+
+# Tauri / Cargo build artifacts
+src-tauri/target/
+src-tauri/gen/schemas/

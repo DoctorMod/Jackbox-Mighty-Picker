@@ -1,0 +1,16 @@
+{
+  "name": "jackbox-mighty-picker",
+  "version": "1.0.0",
+  "description": "A browser-based and standalone Jackbox game library and Steam launcher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare-dist": "node scripts/prepare-dist.js",
+    "dev": "node scripts/prepare-dist.js && node ./node_modules/@tauri-apps/cli/tauri.js dev",
+    "build": "node scripts/prepare-dist.js && node ./node_modules/@tauri-apps/cli/tauri.js build",
+    "tauri": "node ./node_modules/@tauri-apps/cli/tauri.js"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0"
+  }
+}

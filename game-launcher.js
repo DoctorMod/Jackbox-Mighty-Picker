@@ -23,6 +23,14 @@ const advancedModalClose = document.querySelector("#advanced-modal-close");
 const advancedClear = document.querySelector("#advanced-clear");
 const advancedApply = document.querySelector("#advanced-apply");
 const sortButton = document.querySelector("#sort-button");
+const openingModal = document.querySelector("#opening-modal");
+const openingModalClose = document.querySelector("#opening-modal-close");
+const openingDismiss = document.querySelector("#opening-dismiss");
+const openingGameTitle = document.querySelector("#opening-game-title");
+const openingPackTitle = document.querySelector("#opening-pack-title");
+const openingArt = document.querySelector("#opening-art");
+const openingStatusText = document.querySelector("#opening-status-text");
+let openingTimeoutId = null;
 let catalog;
 let allGames = [];
 let visibleGames = [];
@@ -236,12 +244,15 @@ function renderGames() {
   requestAnimationFrame(() => gameGrid.querySelector(".selected")?.scrollIntoView({ block: "nearest", inline: "nearest" }));
 }
 
+let rawManifest = {};
+let rawMetadata = [];
+
 async function loadAssetManifest() {
   try {
     const response = await fetch("./assets/manifest.json");
     if (!response.ok) return;
-    const manifest = await response.json();
-    Object.entries(manifest).forEach(([key, asset]) => {
+    rawManifest = await response.json();
+    Object.entries(rawManifest).forEach(([key, asset]) => {
       artworkCache.set(key, asset.path);
       if (asset.backgroundPath) backgroundCache.set(key, asset.backgroundPath);
     });
@@ -252,8 +263,8 @@ async function loadMetadata() {
   try {
     const response = await fetch("./game-metadata.json");
     if (!response.ok) return;
-    const metadata = await response.json();
-    metadata.forEach((record) => metadataByKey.set(`${record.packId}:${record.id}`, record));
+    rawMetadata = await response.json();
+    rawMetadata.forEach((record) => metadataByKey.set(`${record.packId}:${record.id}`, record));
   } catch { }
 }
 
@@ -282,13 +293,56 @@ function renderDetail() {
   detailArt.style.backgroundImage = `url("${backgroundCache.get(artworkKey(game)) || fallbackArtwork(game)}")`;
 }
 
+function openOpeningModal(game) {
+  lastFocusedElement = document.activeElement;
+  openingGameTitle.textContent = game.title;
+  openingPackTitle.textContent = game.packTitle;
+  const artUrl = backgroundCache.get(artworkKey(game)) || fallbackArtwork(game);
+  if (artUrl) {
+    openingArt.style.backgroundImage = `url("${artUrl}")`;
+    openingArt.hidden = false;
+  } else {
+    openingArt.hidden = true;
+  }
+  openingStatusText.textContent = `Opening ${game.title} in Steam...`;
+  openingModal.hidden = false;
+  openingDismiss.focus();
+
+  if (openingTimeoutId) clearTimeout(openingTimeoutId);
+  openingTimeoutId = setTimeout(() => {
+    closeOpeningModal();
+  }, 4000);
+}
+
+function closeOpeningModal() {
+  if (openingTimeoutId) {
+    clearTimeout(openingTimeoutId);
+    openingTimeoutId = null;
+  }
+  openingModal.hidden = true;
+  lastFocusedElement?.focus();
+}
+
 function selectGame(index) { if (!visibleGames.length) return; selectedGameIndex = (index + visibleGames.length) % visibleGames.length; renderGames(); }
 function launchGame() { const game = currentGame(); if (!game) return; if (game.sources.length > 1) openSourceModal(game); else launchSource(game.sources[0]); }
 function launchSource(game) {
   const windowsPath = game.path.replaceAll("/", "\\");
   const launchUrl = `steam://run/${game.steamAppId}// -launchTo ${windowsPath} -jbg.config isBundle=false`;
   status.textContent = `Opening ${game.title} in Steam...`;
-  window.location.href = launchUrl;
+  openOpeningModal(game);
+  if (window.__TAURI__?.core?.invoke) {
+    window.__TAURI__.core.invoke("open_steam", { url: launchUrl }).catch((err) => {
+      console.error("Tauri steam launch error:", err);
+      window.location.href = launchUrl;
+    });
+  } else if (window.__TAURI_INTERNALS__?.invoke) {
+    window.__TAURI_INTERNALS__.invoke("open_steam", { url: launchUrl }).catch((err) => {
+      console.error("Tauri steam launch error:", err);
+      window.location.href = launchUrl;
+    });
+  } else {
+    window.location.href = launchUrl;
+  }
 }
 function openSourceModal(game) {
   lastFocusedElement = document.activeElement;
@@ -334,9 +388,19 @@ advancedModal.addEventListener("click", (event) => { if (event.target === advanc
 sortButton.addEventListener("click", cycleSort);
 sourceModalClose.addEventListener("click", closeSourceModal);
 sourceModal.addEventListener("click", (event) => { if (event.target === sourceModal) closeSourceModal(); });
+openingModalClose.addEventListener("click", closeOpeningModal);
+openingDismiss.addEventListener("click", closeOpeningModal);
+openingModal.addEventListener("click", (event) => { if (event.target === openingModal) closeOpeningModal(); });
 
 document.addEventListener("keydown", (event) => {
   if (!catalog) return;
+  if (!openingModal.hidden) {
+    if (["Escape", "Backspace", "Enter", " "].includes(event.key)) {
+      closeOpeningModal();
+      event.preventDefault();
+    }
+    return;
+  }
   if (!sourceModal.hidden) {
     if (event.key === "Escape" || event.key === "Backspace") closeSourceModal();
     if (event.key === "ArrowDown" || event.key === "ArrowRight") moveModalFocus(sourceModal, 1);
@@ -380,7 +444,9 @@ function pollController() {
     const right = pressed(15) || axisPressed(0, 1);
     const up = pressed(12) || axisPressed(1, -1);
     const down = pressed(13) || axisPressed(1, 1);
-    if (!sourceModal.hidden) {
+    if (!openingModal.hidden) {
+      if (pressed(0) || pressed(1)) closeOpeningModal();
+    } else if (!sourceModal.hidden) {
       if (up || left) moveModalFocus(sourceModal, -1);
       if (down || right) moveModalFocus(sourceModal, 1);
       if (pressed(0)) document.activeElement?.click();
@@ -408,5 +474,194 @@ function pollController() {
   requestAnimationFrame(pollController);
 }
 
+function normalize(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function normalizeTitle(title) {
+  return normalize(title).replace("thejackboxpartystarter", "");
+}
+
+function labelFor(value) {
+  return String(value || "").toLowerCase().replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function rangeLabel(range, suffix) {
+  if (!range?.min || !range?.max) return "Unknown";
+  return range.min === range.max ? `${range.min} ${suffix}` : `${range.min} - ${range.max} ${suffix}`;
+}
+
+function extractUtilityMetadata(game, pack, utilityGame) {
+  const info = utilityGame?.game_info;
+  if (!info) return {
+    id: game.id,
+    title: game.title,
+    packId: pack.id,
+    pack: pack.title,
+    playerCount: "Unknown",
+    duration: "Unknown",
+    features: [],
+    gameType: "Unknown",
+    language: ["Unknown"],
+    description: "Unknown",
+    gameMode: "Unknown"
+  };
+  const tags = Array.isArray(info.tags) ? info.tags : [];
+  const features = tags.map(labelFor);
+  if (info.family_friendly === "FAMILY_FRIENDLY") features.push("Family friendly");
+  if (info.audience) features.push("Audience");
+  if (info.moderation && info.moderation !== "NO_MODERATION") features.push("Moderation");
+  if (info.stream_friendly === "PLAYABLE") features.push("Stream friendly");
+  if (info.subtitles) features.push("Subtitles");
+  const gameType = tags.length ? labelFor(tags[0]) : "Unknown";
+  return {
+    id: game.id,
+    title: game.title,
+    packId: pack.id,
+    pack: pack.title,
+    playerCount: rangeLabel(info.players, "Players"),
+    duration: rangeLabel(info.playtime, "Minutes"),
+    features: [...new Set(features)],
+    gameType,
+    language: [info.translation === "NATIVELY_TRANSLATED" ? "English (translated)" : "English"],
+    description: info.description || info.small_description || info.tagline || "Unknown",
+    gameMode: info.type ? labelFor(info.type) : "Unknown"
+  };
+}
+
+function findUtilityGame(utilityPacks, game, pack) {
+  const utilityPack = utilityPacks.find((candidate) => String(candidate.launchers_id?.steam) === String(pack.steamAppId));
+  if (!utilityPack) return null;
+  const pathKey = normalize(game.path);
+  const titleKey = normalizeTitle(game.title);
+  return utilityPack.games.find((candidate) => normalize(candidate.path) === pathKey)
+    || utilityPack.games.find((candidate) => normalizeTitle(candidate.name) === titleKey)
+    || null;
+}
+
+function findUtilityBackground(utilityGame) {
+  const utilityAssetsUrl = "https://raw.githubusercontent.com/AkiraArtuhaxis/JackboxUtility-Server-en/main/assets/";
+  return utilityGame?.background ? new URL(utilityGame.background, utilityAssetsUrl).toString() : null;
+}
+
+async function checkAndUpdateAssets() {
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
+    const response = await fetch("https://raw.githubusercontent.com/AkiraArtuhaxis/JackboxUtility-Server-en/main/api/v2/packs.json", {
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
+    if (!response.ok) return;
+
+    const data = await response.json();
+    const utilityPacks = data?.packs;
+    if (!Array.isArray(utilityPacks) || !catalog?.packs) return;
+
+    let updatedAssets = 0;
+    let updatedMetadata = 0;
+    const itemsToUpdate = [];
+
+    catalog.packs.forEach((pack) => {
+      pack.games.forEach((game) => {
+        const key = `${pack.id}:${game.id}`;
+        const hasBackground = backgroundCache.has(key) && Boolean(backgroundCache.get(key));
+        const meta = metadataByKey.get(key);
+        const needsMeta = !meta || meta.playerCount === "Unknown" || meta.gameType === "Unknown";
+
+        if (!hasBackground || needsMeta) {
+          const uGame = findUtilityGame(utilityPacks, game, pack);
+          if (uGame) {
+            itemsToUpdate.push({ game, pack, key, uGame, needsBackground: !hasBackground, needsMeta });
+          }
+        }
+      });
+    });
+
+    if (!itemsToUpdate.length) return;
+
+    status.textContent = `Checking for game updates (${itemsToUpdate.length} item(s))...`;
+
+    for (const item of itemsToUpdate) {
+      const { game, pack, key, uGame, needsBackground, needsMeta } = item;
+
+      if (needsMeta && uGame.game_info) {
+        const newMeta = extractUtilityMetadata(game, pack, uGame);
+        metadataByKey.set(key, newMeta);
+        const metaIndex = rawMetadata.findIndex((r) => `${r.packId}:${r.id}` === key);
+        if (metaIndex >= 0) rawMetadata[metaIndex] = newMeta;
+        else rawMetadata.push(newMeta);
+
+        allGames.forEach((g) => {
+          if (g.packId === pack.id && g.id === game.id) Object.assign(g, newMeta);
+        });
+        updatedMetadata++;
+      }
+
+      if (needsBackground) {
+        const bgUrl = findUtilityBackground(uGame);
+        if (bgUrl) {
+          try {
+            const imgRes = await fetch(bgUrl);
+            if (imgRes.ok) {
+              const blob = await imgRes.blob();
+              const objectUrl = URL.createObjectURL(blob);
+              backgroundCache.set(key, objectUrl);
+              artworkCache.set(key, objectUrl);
+
+              const ext = bgUrl.endsWith(".png") ? ".png" : bgUrl.endsWith(".jpg") ? ".jpg" : ".webp";
+              const relPath = `assets/${pack.id}-${game.id}-background${ext}`;
+              rawManifest[key] = {
+                path: relPath,
+                source: bgUrl,
+                backgroundPath: relPath,
+                backgroundSource: bgUrl
+              };
+
+              if (window.__TAURI__?.core?.invoke) {
+                const arrayBuffer = await blob.arrayBuffer();
+                const bytes = Array.from(new Uint8Array(arrayBuffer));
+                window.__TAURI__.core.invoke("save_asset_file", { relativePath: relPath, data: bytes }).catch(console.error);
+              }
+              updatedAssets++;
+            }
+          } catch (e) {
+            console.warn(`Failed to fetch artwork for ${game.title}:`, e);
+          }
+        }
+      }
+    }
+
+    if (updatedAssets > 0 || updatedMetadata > 0) {
+      status.textContent = `Updated ${updatedAssets} asset(s) and ${updatedMetadata} metadata entry(s).`;
+      setTimeout(() => { if (status.textContent.startsWith("Updated")) status.textContent = ""; }, 4000);
+      renderGames();
+
+      if (window.__TAURI__?.core?.invoke) {
+        if (updatedAssets > 0) {
+          window.__TAURI__.core.invoke("save_metadata_file", {
+            filename: "assets/manifest.json",
+            content: `${JSON.stringify(rawManifest, null, 2)}\n`
+          }).catch(console.error);
+        }
+        if (updatedMetadata > 0) {
+          window.__TAURI__.core.invoke("save_metadata_file", {
+            filename: "game-metadata.json",
+            content: `${JSON.stringify(rawMetadata, null, 2)}\n`
+          }).catch(console.error);
+        }
+      }
+    } else {
+      status.textContent = "";
+    }
+  } catch (err) {
+    console.warn("Asset update check skipped:", err);
+  }
+}
+
 pollController();
-Promise.all([loadAssetManifest(), loadMetadata()]).then(loadCatalog);
+Promise.all([loadAssetManifest(), loadMetadata()])
+  .then(loadCatalog)
+  .then(() => {
+    setTimeout(checkAndUpdateAssets, 1200);
+  });
