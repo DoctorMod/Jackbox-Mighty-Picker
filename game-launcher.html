@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jackbox Game Launcher</title>
+</head>
+<body>
+  <h1>Jackbox Game Launcher</h1>
+
+  <form id="launcher-form">
+    <p>
+      <label>
+        Pack
+        <select id="pack" required disabled></select>
+      </label>
+    </p>
+    <p>
+      <label>
+        Minigame
+        <select id="game" required disabled></select>
+      </label>
+    </p>
+    <button id="launch" type="submit" disabled>Launch game</button>
+  </form>
+
+  <p id="status"></p>
+  <p id="catalog-fallback" hidden>
+    If this page was opened directly from disk, choose <code>pack-games.json</code> here:
+    <input id="catalog-file" type="file" accept="application/json,.json">
+  </p>
+
+  <script>
+    const form = document.querySelector("#launcher-form");
+    const packSelect = document.querySelector("#pack");
+    const gameSelect = document.querySelector("#game");
+    const launchButton = document.querySelector("#launch");
+    const status = document.querySelector("#status");
+    const catalogFallback = document.querySelector("#catalog-fallback");
+    const catalogFile = document.querySelector("#catalog-file");
+    let catalog;
+
+    function setOptions(select, options) {
+      select.replaceChildren(...options.map(({ value, label }) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = label;
+        return option;
+      }));
+    }
+
+    function renderPacks() {
+      setOptions(packSelect, catalog.packs.map((pack) => ({
+        value: pack.id,
+        label: pack.title
+      })));
+      packSelect.disabled = false;
+      renderGames();
+    }
+
+    function renderGames() {
+      const pack = catalog.packs.find(({ id }) => id === Number(packSelect.value));
+      setOptions(gameSelect, pack.games.map((game) => ({
+        value: game.id,
+        label: game.title
+      })));
+      gameSelect.disabled = false;
+      launchButton.disabled = false;
+    }
+
+    function useCatalog(value) {
+      if (!Array.isArray(value?.packs)) throw new Error("Invalid catalog");
+      catalog = value;
+      catalogFallback.hidden = true;
+      status.textContent = "";
+      renderPacks();
+    }
+
+    async function loadCatalog() {
+      try {
+        const response = await fetch("./pack-games.json");
+        if (!response.ok) throw new Error("Catalog request failed");
+        useCatalog(await response.json());
+      } catch {
+        status.textContent = "Choose the catalog JSON file to continue.";
+        catalogFallback.hidden = false;
+      }
+    }
+
+    catalogFile.addEventListener("change", async () => {
+      const file = catalogFile.files[0];
+      if (!file) return;
+      try {
+        useCatalog(JSON.parse(await file.text()));
+      } catch {
+        status.textContent = "That is not a valid pack catalog.";
+      }
+    });
+
+    packSelect.addEventListener("change", renderGames);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const pack = catalog.packs.find(({ id }) => id === Number(packSelect.value));
+      const game = pack.games.find(({ id }) => id === Number(gameSelect.value));
+      const windowsPath = game.path.replaceAll("/", "\\");
+      const launchUrl = `steam://run/${pack.steamAppId}// -launchTo ${windowsPath} -jbg.config isBundle=false`;
+
+      status.textContent = "Opening Steam... ";
+      window.location.href = launchUrl;
+    });
+
+    loadCatalog();
+  </script>
+</body>
+</html>

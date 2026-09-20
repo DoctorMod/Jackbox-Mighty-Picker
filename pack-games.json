@@ -1,0 +1,168 @@
+{
+  "packs": [
+    {
+      "id": 0,
+      "title": "Jackbox Party Pack",
+      "steamAppId": 331670,
+      "games": [
+        { "id": 0, "title": "You Don't Know Jack 2015", "path": "games/YDKJ2015/YDKJ2015.swf" },
+        { "id": 1, "title": "Drawful", "path": "games/Drawful/Drawful.swf" },
+        { "id": 2, "title": "Word Spud", "path": "games/WordSpud/WordSpud.swf" },
+        { "id": 3, "title": "Lie Swatter", "path": "games/LieSwatterParty/LieSwatterParty.swf" },
+        { "id": 4, "title": "Fibbage XL", "path": "games/FibbageXL/FibbageXL.swf" }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Jackbox Party Pack 2",
+      "steamAppId": 397460,
+      "games": [
+        { "id": 5, "title": "Fibbage 2", "path": "games/Fibbage2/Fibbage2.swf" },
+        { "id": 6, "title": "Earwax", "path": "games/Earwax/Earwax.swf" },
+        { "id": 7, "title": "Bidiots", "path": "games/Auction/Auction.swf" },
+        { "id": 8, "title": "Bomb Corp", "path": "games/BombInterns/BombInterns.swf" },
+        { "id": 9, "title": "Quiplash", "path": "games/QuiplashXL/QuiplashXL.swf" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Jackbox Party Pack 3",
+      "steamAppId": 434170,
+      "games": [
+        { "id": 10, "title": "Fakin' It", "path": "games/FakinIt/FakinIt.swf" },
+        { "id": 11, "title": "Tee K.O.", "path": "games/AwShirt/AwShirt.swf" },
+        { "id": 12, "title": "Quiplash 2", "path": "games/Quiplash2/Quiplash2.swf" },
+        { "id": 13, "title": "Trivia Murder Party", "path": "games/triviadeath/TriviaDeath.swf" },
+        { "id": 14, "title": "Guesspionage", "path": "games/PollPosition/PollPosition.swf" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Jackbox Party Pack 4",
+      "steamAppId": 610180,
+      "games": [
+        { "id": 15, "title": "Fibbage 3", "path": "games/Fibbage3/Fibbage3.swf" },
+        { "id": 16, "title": "Survive the Internet", "path": "games/SurviveTheInternet/SurviveTheInternet.swf" },
+        { "id": 17, "title": "Monster Seeking Monster", "path": "games/MonsterMingle/MonsterMingle.swf" },
+        { "id": 18, "title": "Bracketeering", "path": "games/Bracketeering/Bracketeering.swf" },
+        { "id": 19, "title": "Civic Doodle", "path": "games/Overdrawn/Overdrawn.swf" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Jackbox Party Pack 5",
+      "steamAppId": 774461,
+      "games": [
+        { "id": 20, "title": "You Don't Know Jack: Full Stream", "path": "games/YDKJ2018/YDKJ2018.swf" },
+        { "id": 21, "title": "Split the Room", "path": "games/SplitTheRoom/SplitTheRoom.swf" },
+        { "id": 22, "title": "Mad Verse City", "path": "games/RapBattle/RapBattle.swf" },
+        { "id": 23, "title": "Zeeple Dome", "path": "games/SlingShoot/SlingShoot.swf" },
+        { "id": 24, "title": "Patently Stupid", "path": "games/PatentlyStupid/PatentlyStupid.swf" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Jackbox Party Pack 6",
+      "steamAppId": 1005300,
+      "games": [
+        { "id": 25, "title": "Trivia Murder Party 2", "path": "games/TriviaDeath2/TriviaDeath2.swf" },
+        { "id": 26, "title": "Role Models", "path": "games/RoleModels/RoleModels.swf" },
+        { "id": 27, "title": "Joke Boat", "path": "games/Jokeboat/Jokeboat.swf" },
+        { "id": 28, "title": "Dictionarium", "path": "games/Ridictionary/Ridictionary.swf" },
+        { "id": 29, "title": "Push the Button", "path": "games/PushTheButton/PushTheButton.swf" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Jackbox Party Pack 7",
+      "steamAppId": 1211630,
+      "games": [
+        { "id": 30, "title": "Talking Points", "path": "games/JackboxTalks/JackboxTalks.swf" },
+        { "id": 31, "title": "Quiplash 3", "path": "games/Quiplash3/Quiplash3.swf" },
+        { "id": 32, "title": "The Devils and the Details", "path": "games/Everyday/Everyday.swf" },
+        { "id": 33, "title": "Champ'd Up", "path": "games/WorldChampions/WorldChampions.swf" },
+        { "id": 34, "title": "Blather 'Round", "path": "games/BlankyBlank/BlankyBlank.swf" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Jackbox Party Pack 8",
+      "steamAppId": 1552350,
+      "games": [
+        { "id": 35, "title": "Job Job", "path": "games/JobGame/JobGame.swf" },
+        { "id": 36, "title": "Drawful Animate", "path": "games/DrawfulAnimate/DrawfulAnimate.swf" },
+        { "id": 37, "title": "The Wheel of Enormous Proportions", "path": "games/TheWheel/TheWheel.swf" },
+        { "id": 38, "title": "The Poll Mine", "path": "games/SurveyBomb/SurveyBomb.swf" },
+        { "id": 39, "title": "Weapons Drawn", "path": "games/MurderDetectives/MurderDetectives.swf" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Jackbox Party Pack 9",
+      "steamAppId": 1850960,
+      "games": [
+        { "id": 40, "title": "Fibbage 4", "path": "games/Fibbage4/Fibbage4.swf" },
+        { "id": 41, "title": "Roomerang", "path": "games/MakeFriends/MakeFriends.swf" },
+        { "id": 42, "title": "Junktopia", "path": "games/AntiqueGame/AntiqueGame.swf" },
+        { "id": 43, "title": "Nonsensory", "path": "games/RangeGame/RangeGame.swf" },
+        { "id": 44, "title": "Quixort", "path": "games/Lineup/Lineup.swf" }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Jackbox Party Pack 10",
+      "steamAppId": 2216830,
+      "games": [
+        { "id": 45, "title": "Tee K.O. 2", "path": "games/AwShirt2/AwShirt2.swf" },
+        { "id": 46, "title": "Dodo Re Mi", "path": "games/NopusOpus/NopusOpus.swf" },
+        { "id": 47, "title": "FixyText", "path": "games/RiskyText/RiskyText.swf" },
+        { "id": 48, "title": "Timejinx", "path": "games/TimeTrivia/TimeTrivia.swf" },
+        { "id": 49, "title": "Hypnotorious", "path": "games/Strangers/Strangers.swf" }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The Jackbox Party Starter",
+      "steamAppId": 1755580,
+      "games": [
+        { "id": 11, "title": "Tee K.O.", "path": "games/AwShirt/AwShirt.swf" },
+        { "id": 25, "title": "Trivia Murder Party 2", "path": "games/triviadeath2/triviadeath2.swf" },
+        { "id": 31, "title": "Quiplash 3", "path": "games/Quiplash3/Quiplash3.swf" }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "The Jackbox Naughty Pack",
+      "steamAppId": 2652000,
+      "games": [
+        { "id": 50, "title": "Fakin' It All Night Long", "path": "games/FakinIt2/FakinIt2.swf" },
+        { "id": 51, "title": "Dirty Drawful", "path": "games/Drawful3/Drawful3.swf" },
+        { "id": 52, "title": "Let Me Finish", "path": "games/CAPTCHA/CAPTCHA.swf" }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Jackbox Party Pack 11",
+      "steamAppId": 3364070,
+      "games": [
+        { "id": 57, "title": "Doominate", "path": "games/YouRuinedIt/YouRuinedIt.swf" },
+        { "id": 58, "title": "Legends of Trivia", "path": "games/TriviaRPG/TriviaRPG.swf" },
+        { "id": 59, "title": "Hear Say", "path": "games/MicGame/MicGame.swf" },
+        { "id": 60, "title": "Cookie Haus", "path": "games/CookiesGame/CookiesGame.swf" },
+        { "id": 61, "title": "Suspectives", "path": "games/DirtyDetectives/DirtyDetectives.swf" }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Jackbox Party Pack 12",
+      "steamAppId": 4199960,
+      "games": [
+        { "id": 62, "title": "We Forgot a Card!", "path": "games/GratingCards/GratingCards.swf" },
+        { "id": 63, "title": "MegaPals", "path": "games/MegaFriends/MegaFriends.swf" },
+        { "id": 64, "title": "Debate and Switch", "path": "games/Debate/Debate.swf" },
+        { "id": 65, "title": "Hyperface", "path": "games/ReactionGame/ReactionGame.swf" },
+        { "id": 66, "title": "Idol Factions", "path": "games/WordProcessing/WordProcessing.swf" }
+      ]
+    }
+  ]
+}
