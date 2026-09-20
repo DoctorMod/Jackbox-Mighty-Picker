@@ -1,0 +1,1372 @@
+[
+  {
+    "id": 0,
+    "title": "You Don't Know Jack 2015",
+    "packId": 0,
+    "pack": "Jackbox Party Pack",
+    "playerCount": "1 - 4 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Moderation"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "The smart-ass trivia show that started it all! Hundreds of all-new twisted trivia questions and everyone’s favorite host, Cookie Masterson!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 1,
+    "title": "Drawful",
+    "packId": 0,
+    "pack": "Jackbox Party Pack",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Stream friendly"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "The drawing game that takes all other drawing games and draws little mustaches on them. Can’t draw? No problem! It’s funnier that way!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 2,
+    "title": "Word Spud",
+    "packId": 0,
+    "pack": "Jackbox Party Pack",
+    "playerCount": "2 - 8 Players",
+    "duration": "10 - 15 Minutes",
+    "features": [
+      "Writing",
+      "Family friendly",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Keep the words rolling all night! Just finish the word coming toward you, like “Mail___.” Mail enhancement, you say? You nailed it.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 3,
+    "title": "Lie Swatter",
+    "packId": 0,
+    "pack": "Jackbox Party Pack",
+    "playerCount": "1 - 100 Players",
+    "duration": "10 - 15 Minutes",
+    "features": [
+      "Knowledge",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "Do lobsters pee out of their heads? Did Japan vote the instant noodle the top invention of the 20th century? Or are you calling BS?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 4,
+    "title": "Fibbage XL",
+    "packId": 0,
+    "pack": "Jackbox Party Pack",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Knowledge",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Fool your friends with your lies, avoid theirs, and find the (usually outrageous) truth. “The mayor of Rabbit Hash, Kentucky is a ____.” Go!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 5,
+    "title": "Fibbage 2",
+    "packId": 1,
+    "pack": "Jackbox Party Pack 2",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Knowledge",
+      "Audience",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "More Fibbage! Lie to your friends, avoid their lies, and spot the truth. “In Arizona, you must obtain a permit to feed ______ to pigs.” Go!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 6,
+    "title": "Earwax",
+    "packId": 1,
+    "pack": "Jackbox Party Pack 2",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 25 Minutes",
+    "features": [
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "English"
+    ],
+    "description": "Cow moo? Huge explosion? Or tiny fart? Which to choose? It's the sound effects game that will leave you up to your ears in laughter!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 7,
+    "title": "Bidiots",
+    "packId": 1,
+    "pack": "Jackbox Party Pack 2",
+    "playerCount": "3 - 6 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Deduction",
+      "Family friendly",
+      "Stream friendly"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "Outbid your opponents for absurd art – drawn by players themselves – and win this strangely competitive auction game! Don’t be a bidiot!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 8,
+    "title": "Bomb Corp",
+    "packId": 1,
+    "pack": "Jackbox Party Pack 2",
+    "playerCount": "1 - 4 Players",
+    "duration": "5 - 10 Minutes",
+    "features": [
+      "Talking",
+      "Family friendly",
+      "Moderation"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "Welcome to Bomb Corp. Interns of your kind must help defuse bombs in our office. It’s a weird office full of bombs. Just hit start.",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 9,
+    "title": "Quiplash",
+    "packId": 1,
+    "pack": "Jackbox Party Pack 2",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 Minutes",
+    "features": [
+      "Family friendly",
+      "Audience mode: 10,000"
+    ],
+    "gameType": "Fill-In-The-Blank",
+    "language": [
+      "American English (EN-US)"
+    ],
+    "description": "Unknown",
+    "gameMode": "Unknown"
+  },
+  {
+    "id": 10,
+    "title": "Fakin' It",
+    "packId": 2,
+    "pack": "Jackbox Party Pack 3",
+    "playerCount": "3 - 6 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Deduction",
+      "Talking",
+      "Audience",
+      "Moderation"
+    ],
+    "gameType": "Deduction",
+    "language": [
+      "English"
+    ],
+    "description": "Everyone gives an answer, but not everyone knows the question. One of your friends has something to hide. Find the faker before it’s too late!",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 11,
+    "title": "Tee K.O.",
+    "packId": 2,
+    "pack": "Jackbox Party Pack 3",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "Draw pictures, write slogans, then swap them around to create your own custom t-shirt warriors. Only the most worthy novelty t-shirt will leave the tournament alive.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 12,
+    "title": "Quiplash 2",
+    "packId": 2,
+    "pack": "Jackbox Party Pack 3",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "The say-anything party game returns. Come up with \"a bad substitute for dental floss\" and win! Tired of our weird prompts? Try the new Make Your Own mode!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 13,
+    "title": "Trivia Murder Party",
+    "packId": 2,
+    "pack": "Jackbox Party Pack 3",
+    "playerCount": "1 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "Be the last to survive a serial killer's absurd trivia game show. But it's fun!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 14,
+    "title": "Guesspionage",
+    "packId": 2,
+    "pack": "Jackbox Party Pack 3",
+    "playerCount": "2 - 8 Players",
+    "duration": "10 - 15 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "What percentage of people have buried something in the woods? Ridden in the back of a cop car? Have a crush on someone they work with? Guess right and win!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 15,
+    "title": "Fibbage 3",
+    "packId": 3,
+    "pack": "Jackbox Party Pack 4",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Fib your way through all-new question types and the all-newer game mode Fibbage: Enough About You. Guess the weird facts about your fellow players!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 16,
+    "title": "Survive the Internet",
+    "packId": 3,
+    "pack": "Jackbox Party Pack 4",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Log on and strap in! It’s survival of the funniest as you playfully take your friends out of context across the World Wide Web.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 17,
+    "title": "Monster Seeking Monster",
+    "packId": 3,
+    "pack": "Jackbox Party Pack 4",
+    "playerCount": "3 - 7 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Deduction",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "A dating-themed game where you send funny messages and try to hide your secret monster powers. Just like real dating!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 18,
+    "title": "Bracketeering",
+    "packId": 3,
+    "pack": "Jackbox Party Pack 4",
+    "playerCount": "3 - 16 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "The deranged debate tournament! “What’s the best vegetable for Benedict Cumberbatch to voice in a movie?” Place smart bets on what will win stupid arguments.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 19,
+    "title": "Civic Doodle",
+    "packId": 3,
+    "pack": "Jackbox Party Pack 4",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "You’ve been hired to create murals all over Doodle Valley. Compete to see who can make the best additions in your attempt to “beautify” the city.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 20,
+    "title": "You Don't Know Jack: Full Stream",
+    "packId": 4,
+    "pack": "Jackbox Party Pack 5",
+    "playerCount": "1 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "YOU DON’T KNOW JACK: Full Stream brings the classic irreverent trivia phenomenon to the wildly popular and totally fictional streaming service Binjpipe! Their terms of service explicitly states you’ll love it!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 21,
+    "title": "Split the Room",
+    "packId": 4,
+    "pack": "Jackbox Party Pack 5",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Deduction",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "The what-if game where anything is possible! Create strange and divisive hypothetical situations.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 22,
+    "title": "Mad Verse City",
+    "packId": 4,
+    "pack": "Jackbox Party Pack 5",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "The robot rap battle game! Spit mad rhymes against your friends to see who’s the dopest MC and who’s the wackest cat.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 23,
+    "title": "Zeeple Dome",
+    "packId": 4,
+    "pack": "Jackbox Party Pack 5",
+    "playerCount": "1 - 6 Players",
+    "duration": "10 - 15 Minutes",
+    "features": [
+      "Family friendly",
+      "Moderation"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "English"
+    ],
+    "description": "The galaxy’s deadliest game show! Fling yourself and win fabulous prizes!!!",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 24,
+    "title": "Patently Stupid",
+    "packId": 4,
+    "pack": "Jackbox Party Pack 5",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Talking",
+      "Writing",
+      "Drawing",
+      "Family friendly",
+      "Audience",
+      "Moderation"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "The inventive drawing game where you solve bizarre problems! Pitch your ideas to rake in the cash!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 25,
+    "title": "Trivia Murder Party 2",
+    "packId": 5,
+    "pack": "Jackbox Party Pack 6",
+    "playerCount": "1 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "A serial killer is running an absurd trivia game out of the family-run Murder Hotel he grew up in. Can you survive?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 26,
+    "title": "Role Models",
+    "packId": 5,
+    "pack": "Jackbox Party Pack 6",
+    "playerCount": "3 - 6 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Everybody’s somebody, so who are you? The planner? The flake? The sassy one? Step into the lab and find out.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 27,
+    "title": "Joke Boat",
+    "packId": 5,
+    "pack": "Jackbox Party Pack 6",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Ahoy! You’re an amateur comic on a fourth-rate cruise ship. Do you have what it takes to win the talent show?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 28,
+    "title": "Dictionarium",
+    "packId": 5,
+    "pack": "Jackbox Party Pack 6",
+    "playerCount": "3 - 8 Players",
+    "duration": "10 - 15 Minutes",
+    "features": [
+      "Writing",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Humans have been inventing words and phrases for centuries. Now it’s your turn to contribute an entry to the pages of the Dictionarium.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 29,
+    "title": "Push the Button",
+    "packId": 5,
+    "pack": "Jackbox Party Pack 6",
+    "playerCount": "4 - 10 Players",
+    "duration": "15 - 25 Minutes",
+    "features": [
+      "Talking",
+      "Writing",
+      "Drawing",
+      "Deduction",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "Danger! Shapeshifting aliens have infiltrated your starship. Can you and your crew find them before time runs out?",
+    "gameMode": "Team"
+  },
+  {
+    "id": 30,
+    "title": "Talking Points",
+    "packId": 6,
+    "pack": "Jackbox Party Pack 7",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Talking",
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "Give a speech about pictures you haven't seen before. It doesn’t matter if it makes sense, it’s more fun if it doesn’t!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 31,
+    "title": "Quiplash 3",
+    "packId": 6,
+    "pack": "Jackbox Party Pack 7",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "The Threequel to the say-anything party game! Answer the prompts and make your friends laugh… hopefully.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 32,
+    "title": "The Devils and the Details",
+    "packId": 6,
+    "pack": "Jackbox Party Pack 7",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Talking",
+      "Deduction",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "You're a family of devils who've moved to an average suburb. Can you survive the daily torture of human life?",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 33,
+    "title": "Champ'd Up",
+    "packId": 6,
+    "pack": "Jackbox Party Pack 7",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "Enter the Scrawliseum, where characters fight over weird titles. Can you take down the heavy favorite?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 34,
+    "title": "Blather 'Round",
+    "packId": 6,
+    "pack": "Jackbox Party Pack 7",
+    "playerCount": "2 - 6 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Writing",
+      "Talking",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "A pop culture guessing game where nothing sounds quite right! It's a good fun time experience.",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 35,
+    "title": "Job Job",
+    "packId": 7,
+    "pack": "Jackbox Party Pack 8",
+    "playerCount": "3 - 10 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "A comedy game where your jokes must be built of words from other players in a mixed up take on a job interview.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 36,
+    "title": "Drawful Animate",
+    "packId": 7,
+    "pack": "Jackbox Party Pack 8",
+    "playerCount": "3 - 10 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "The third game in the Drawful series allows players to create two corresponding images which leads to one dynamic pictorial guessing game.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 37,
+    "title": "The Wheel of Enormous Proportions",
+    "packId": 7,
+    "pack": "Jackbox Party Pack 8",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 - 25 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "General knowledge and random chance combine to create a trivia game where everybody has a chance to learn the ultimate answer.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 38,
+    "title": "The Poll Mine",
+    "packId": 7,
+    "pack": "Jackbox Party Pack 8",
+    "playerCount": "2 - 10 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Talking",
+      "Deduction",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "A survey game that's all about YOU! Split into teams and see who can escape from the witch's lair!",
+    "gameMode": "Team"
+  },
+  {
+    "id": 39,
+    "title": "Weapons Drawn",
+    "packId": 7,
+    "pack": "Jackbox Party Pack 8",
+    "playerCount": "4 - 8 Players",
+    "duration": "20 - 30 Minutes",
+    "features": [
+      "Talking",
+      "Drawing",
+      "Writing",
+      "Deduction",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "This social-deduction game turns a fancy ball into a killer free-for-all where you are both artistic murderer and attentive detective.",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 40,
+    "title": "Fibbage 4",
+    "packId": 8,
+    "pack": "Jackbox Party Pack 9",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "The hilarious bluffing party game returns with an all new Final Fibbage, video questions, fan-submitted questions, and Fibbage Enough About You mode!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 41,
+    "title": "Roomerang",
+    "packId": 8,
+    "pack": "Jackbox Party Pack 9",
+    "playerCount": "4 - 9 Players",
+    "duration": "25 - 30 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "Channel your inner reality TV star in an attempt to come out on top! Respond to prompts, bring the competition and role-play to avoid being voted out. Never fear though, even when you’re out you’ll find yourself Roomerang-ed right back into the drama!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 42,
+    "title": "Junktopia",
+    "packId": 8,
+    "pack": "Jackbox Party Pack 9",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "A strange wizard has turned you into a frog! Create hilarious backstories for weird objects and then get them appraised. The player with the most valuable items becomes human again!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 43,
+    "title": "Nonsensory",
+    "packId": 8,
+    "pack": "Jackbox Party Pack 9",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Writing",
+      "Drawing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "Professor Nanners is here to test your NSP (Nonsensory Perception) in this drawing, writing, and guessing game! How close can you get to guessing where another player’s prompt ranks on the silliest of scales?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 44,
+    "title": "Quixort",
+    "packId": 8,
+    "pack": "Jackbox Party Pack 9",
+    "playerCount": "1 - 10 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Talking",
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "In this trivia sorting factory, work with your team to sort falling answers into their proper order before they hit the floor! Or, play the single player mode and see how many blocks you can sort before topping out. It’s as easy as A, C, B!",
+    "gameMode": "Team"
+  },
+  {
+    "id": 45,
+    "title": "Tee K.O. 2",
+    "packId": 9,
+    "pack": "Jackbox Party Pack 10",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "In Tee K.O. 2, return to T-Shirt Island, where the most hardened warriors in the world compete in a deadly fighting tournament. The drawing finger–not the fist–decides the victory!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 46,
+    "title": "Dodo Re Mi",
+    "packId": 9,
+    "pack": "Jackbox Party Pack 10",
+    "playerCount": "1 - 9 Players",
+    "duration": "5 - 10 Minutes",
+    "features": [
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "In Dodo Re Mi, your phone is your instrument. You and your flock must make music together to escape the hungry jungle plant.",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 47,
+    "title": "FixyText",
+    "packId": 9,
+    "pack": "Jackbox Party Pack 10",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "FixyText is the Wild West of text-editing. In this chaotic game, everyone’s in group chat, typing all at once to make the most memorable statement. And there’s no delete key. Take that auto-correct!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 48,
+    "title": "Timejinx",
+    "packId": 9,
+    "pack": "Jackbox Party Pack 10",
+    "playerCount": "1 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "In Timejinx, you’re a time traveler from the future competing in a high-stakes trivia night. Save your current timeline by answering questions about the past.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 49,
+    "title": "Hypnotorious",
+    "packId": 9,
+    "pack": "Jackbox Party Pack 10",
+    "playerCount": "4 - 8 Players",
+    "duration": "20 - 30 Minutes",
+    "features": [
+      "Writing",
+      "Deduction",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "Hypnotorious is a game with secret roles, tentative alliances and of course, silly answers to ridiculous questions. Who is on your side?",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 11,
+    "title": "Tee K.O.",
+    "packId": 10,
+    "pack": "The Jackbox Party Starter",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 25 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "Draw pictures, write slogans, then swap them around to create your own custom t-shirt warriors. Only the most worthy novelty t-shirt will leave the tournament alive.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 25,
+    "title": "Trivia Murder Party 2",
+    "packId": 10,
+    "pack": "The Jackbox Party Starter",
+    "playerCount": "1 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Knowledge",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "A serial killer is running an absurd trivia game out of the family-run Murder Hotel he grew up in. Can you survive?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 31,
+    "title": "Quiplash 3",
+    "packId": 10,
+    "pack": "The Jackbox Party Starter",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "The Threequel to the say-anything party game! Answer the prompts and make your friends laugh… hopefully.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 50,
+    "title": "Fakin' It All Night Long",
+    "packId": 11,
+    "pack": "The Jackbox Naughty Pack",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 - 30 Minutes",
+    "features": [
+      "Deduction",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Deduction",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "Fakin’ It returns and this time we’re putting it all out there. Everyone gets a secret task except the Faker, who tries to blend in. Find out which of your friends is the best liar… and SO much more! Featuring new categories like “Finger Blast” and a brand new “remote play” mode. Who doesn’t like a good Finger Blast with their friends?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 51,
+    "title": "Dirty Drawful",
+    "packId": 11,
+    "pack": "The Jackbox Naughty Pack",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "It’s Drawful, but dirty… It's Dirty Drawful. Hosted by the one and only Drawful Owl, as you’ve never seen her before. We’ve taken the game that you love and added prompts to ensure your drawings are both terrible and titillating. This game has everything:, sex, drugs, and other things that we absolutely cannot list here! Also, if you can’t commit to a relationship, or a drawing, we added an undo button just for you.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 52,
+    "title": "Let Me Finish",
+    "packId": 11,
+    "pack": "The Jackbox Naughty Pack",
+    "playerCount": "3 - 8 Players",
+    "duration": "5 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Drawing",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English (translated)"
+    ],
+    "description": "Let Me Finish is Jackbox’s new presentation game that examines life’s serious questions like, “Where is the mailbox’s butt?” or “How does this avocado get aroused?” Everyone gets a chance to speak their mind, but will others pick up what you’re putting down?",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 57,
+    "title": "Doominate",
+    "packId": 31,
+    "pack": "Jackbox Party Pack 11",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Writing",
+    "language": [
+      "English"
+    ],
+    "description": "Take a perfectly lovely situation and destroy it in this head-to-head joke game where it feels so good to be so bad.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 58,
+    "title": "Legends of Trivia",
+    "packId": 31,
+    "pack": "Jackbox Party Pack 11",
+    "playerCount": "1 - 6 Players",
+    "duration": "20 - 30 Minutes",
+    "features": [
+      "Knowledge",
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Knowledge",
+    "language": [
+      "English"
+    ],
+    "description": "Assemble your team and put your trivia knowledge to the test in a fantastical world full of danger! Teamwork! Monsters! Do you dare take on one of the most challenging trivia games yet?",
+    "gameMode": "Coop"
+  },
+  {
+    "id": 59,
+    "title": "Hear Say",
+    "packId": 31,
+    "pack": "Jackbox Party Pack 11",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Talking",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Talking",
+    "language": [
+      "English"
+    ],
+    "description": "Record sound effects and dialogue directly from your phone in a foley-inspired game where laughter is the soundtrack. Then, watch your voices come to life in a series of short movie clips!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 60,
+    "title": "Cookie Haus",
+    "packId": 31,
+    "pack": "Jackbox Party Pack 11",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Drawing",
+      "Writing",
+      "Audience",
+      "Moderation",
+      "Stream friendly",
+      "Subtitles"
+    ],
+    "gameType": "Drawing",
+    "language": [
+      "English"
+    ],
+    "description": "Play the coziest and kookiest drawing game yet by fulfilling cookie design orders for unusual clientele. Don’t play on an empty stomach!",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 61,
+    "title": "Suspectives",
+    "packId": 31,
+    "pack": "Jackbox Party Pack 11",
+    "playerCount": "4 - 8 Players",
+    "duration": "15 - 20 Minutes",
+    "features": [
+      "Deduction",
+      "Talking",
+      "Family friendly",
+      "Audience",
+      "Moderation",
+      "Subtitles"
+    ],
+    "gameType": "Deduction",
+    "language": [
+      "English"
+    ],
+    "description": "There’s been a crime, one player secretly did it, and the evidence comes from your own survey answers! Study the clues, defend your innocence (even if you’re lying), and put your friends on trial.",
+    "gameMode": "Versus"
+  },
+  {
+    "id": 62,
+    "title": "We Forgot a Card!",
+    "packId": 34,
+    "pack": "Jackbox Party Pack 12",
+    "playerCount": "3 - 8 Players",
+    "duration": "20 Minutes",
+    "features": [
+      "Family friendly",
+      "Moderation",
+      "Audience mode: 10,000"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "Unknown"
+    ],
+    "description": "Unknown",
+    "gameMode": "Unknown"
+  },
+  {
+    "id": 63,
+    "title": "MegaPals",
+    "packId": 34,
+    "pack": "Jackbox Party Pack 12",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 Minutes",
+    "features": [
+      "Family friendly",
+      "Moderation",
+      "Audience mode: 10,000"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "Unknown"
+    ],
+    "description": "Unknown",
+    "gameMode": "Unknown"
+  },
+  {
+    "id": 64,
+    "title": "Debate and Switch",
+    "packId": 34,
+    "pack": "Jackbox Party Pack 12",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 Minutes",
+    "features": [
+      "Family friendly",
+      "Moderation",
+      "Audience mode: 10,000"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "Unknown"
+    ],
+    "description": "Unknown",
+    "gameMode": "Unknown"
+  },
+  {
+    "id": 65,
+    "title": "Hyperface",
+    "packId": 34,
+    "pack": "Jackbox Party Pack 12",
+    "playerCount": "3 - 8 Players",
+    "duration": "15 Minutes",
+    "features": [
+      "Family friendly",
+      "Moderation",
+      "Audience mode: 10,000"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "Unknown"
+    ],
+    "description": "Unknown",
+    "gameMode": "Unknown"
+  },
+  {
+    "id": 66,
+    "title": "Idol Factions",
+    "packId": 34,
+    "pack": "Jackbox Party Pack 12",
+    "playerCount": "2 - 8 Players",
+    "duration": "15 Minutes",
+    "features": [
+      "Family friendly",
+      "Moderation",
+      "Audience mode: 10,000"
+    ],
+    "gameType": "Unknown",
+    "language": [
+      "Unknown"
+    ],
+    "description": "Unknown",
+    "gameMode": "Unknown"
+  }
+]
