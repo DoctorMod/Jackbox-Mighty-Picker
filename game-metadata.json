@@ -173,21 +173,22 @@
   },
   {
     "id": 9,
-    "title": "Quiplash",
+    "title": "QuiplashXL",
     "packId": 1,
     "pack": "Jackbox Party Pack 2",
     "playerCount": "3 - 8 Players",
-    "duration": "15 Minutes",
+    "duration": "15 - 20 Minutes",
     "features": [
-      "Family friendly",
-      "Audience mode: 10,000"
+      "Writing",
+      "Audience",
+      "Stream friendly"
     ],
-    "gameType": "Fill-In-The-Blank",
+    "gameType": "Writing",
     "language": [
-      "American English (EN-US)"
+      "English"
     ],
-    "description": "Unknown",
-    "gameMode": "Unknown"
+    "description": "The laugh-a-minute battle of wits and wittiness in its HUGEST form! Come up with “the best name to give an ugly baby” and win!",
+    "gameMode": "Versus"
   },
   {
     "id": 10,
@@ -1279,13 +1280,9 @@
     "title": "We Forgot a Card!",
     "packId": 34,
     "pack": "Jackbox Party Pack 12",
-    "playerCount": "3 - 8 Players",
-    "duration": "20 Minutes",
-    "features": [
-      "Family friendly",
-      "Moderation",
-      "Audience mode: 10,000"
-    ],
+    "playerCount": "Unknown",
+    "duration": "Unknown",
+    "features": [],
     "gameType": "Unknown",
     "language": [
       "Unknown"
@@ -1298,13 +1295,9 @@
     "title": "MegaPals",
     "packId": 34,
     "pack": "Jackbox Party Pack 12",
-    "playerCount": "3 - 8 Players",
-    "duration": "15 Minutes",
-    "features": [
-      "Family friendly",
-      "Moderation",
-      "Audience mode: 10,000"
-    ],
+    "playerCount": "Unknown",
+    "duration": "Unknown",
+    "features": [],
     "gameType": "Unknown",
     "language": [
       "Unknown"
@@ -1317,13 +1310,9 @@
     "title": "Debate and Switch",
     "packId": 34,
     "pack": "Jackbox Party Pack 12",
-    "playerCount": "2 - 8 Players",
-    "duration": "15 Minutes",
-    "features": [
-      "Family friendly",
-      "Moderation",
-      "Audience mode: 10,000"
-    ],
+    "playerCount": "Unknown",
+    "duration": "Unknown",
+    "features": [],
     "gameType": "Unknown",
     "language": [
       "Unknown"
@@ -1336,13 +1325,9 @@
     "title": "Hyperface",
     "packId": 34,
     "pack": "Jackbox Party Pack 12",
-    "playerCount": "3 - 8 Players",
-    "duration": "15 Minutes",
-    "features": [
-      "Family friendly",
-      "Moderation",
-      "Audience mode: 10,000"
-    ],
+    "playerCount": "Unknown",
+    "duration": "Unknown",
+    "features": [],
     "gameType": "Unknown",
     "language": [
       "Unknown"
@@ -1355,13 +1340,9 @@
     "title": "Idol Factions",
     "packId": 34,
     "pack": "Jackbox Party Pack 12",
-    "playerCount": "2 - 8 Players",
-    "duration": "15 Minutes",
-    "features": [
-      "Family friendly",
-      "Moderation",
-      "Audience mode: 10,000"
-    ],
+    "playerCount": "Unknown",
+    "duration": "Unknown",
+    "features": [],
     "gameType": "Unknown",
     "language": [
       "Unknown"

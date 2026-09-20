@@ -49,12 +49,10 @@ Some games may not be present in the current Jackbox Utility dataset. Those game
 
 ## Files
 
-- `game-launcher.html`: the browser interface and Steam launch logic.
+- `game-launcher.html`: the browser interface markup.
+- `game-launcher.css`: launcher layout, controls, cards, detail panel, and modal styles.
+- `game-launcher.js`: catalog loading, filtering, controller input, and Steam launch logic.
 - `pack-games.json`: the game catalog and installed-game paths.
 - `download-assets.js`: downloads official game artwork and generates the asset manifest.
 - `game-metadata.json`: generated metadata for every catalog entry, including player count, duration, features, game type, pack, language, description, and game mode.
 - `assets/`: generated local artwork; ignored by Git.
-
-## Asset Notice
-
-The downloader retrieves artwork from Jackbox Games' official web assets for local use. Downloading an asset does not transfer ownership or grant permission to redistribute it. Review the applicable Jackbox Games terms before publishing or distributing the downloaded files.

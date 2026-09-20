@@ -5,100 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181122">
   <title>Mighty Picker</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap");
-
-    :root {
-      color-scheme: dark;
-      --ink: #f5f5f5;
-      --muted: #777777;
-      --dim: #3a3a3a;
-      --yellow: #ffed00;
-      --panel: #101010;
-      --line: #282828;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-width: 320px;
-      color: var(--ink);
-      font-family: "DM Sans", sans-serif;
-      background: #070707;
-    }
-
-    button { font: inherit; }
-
-    .app { display: grid; grid-template-columns: 100px minmax(0, 1fr); min-height: 100vh; }
-    .sidebar { display: flex; position: sticky; top: 0; height: 100vh; flex-direction: column; align-items: center; padding: 22px 12px; border-right: 1px solid #202020; background: #0b0b0b; }
-    .brand-mark { width: 54px; height: 54px; display: grid; place-items: center; margin-bottom: 38px; color: #0b0b0b; background: var(--yellow); border: 4px solid #6e64a1; border-radius: 50%; font: 29px "Archivo Black", sans-serif; }
-    .side-nav { display: grid; width: 100%; gap: 12px; }
-    .side-button { display: grid; place-items: center; gap: 6px; padding: 13px 2px; color: #696969; background: transparent; border: 0; border-radius: 7px; cursor: pointer; font-size: 10px; font-weight: 700; text-transform: uppercase; }
-    .side-button span:first-child { font-size: 24px; filter: grayscale(1); }
-    .side-button:hover, .side-button.active { color: var(--yellow); background: #171717; }
-    .side-button.active span:first-child { filter: none; }
-    .content { min-width: 0; padding: 22px clamp(18px, 3vw, 46px) 46px; }
-    .topbar { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
-    .search { flex: 1; max-width: 920px; margin: auto; }
-    .search input { width: 100%; padding: 13px 22px; color: var(--ink); background: #191919; border: 1px solid #333; border-radius: 30px; outline: none; font-weight: 700; }
-    .search input:focus { border-color: var(--yellow); }
-    .connection { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 12px; white-space: nowrap; }
-    .connection::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #d94e4e; }
-    .connection.connected::before { background: #72df8d; }
-    .filter-strip { display: flex; align-items: center; gap: 10px; overflow-x: auto; padding: 0 0 14px; border-bottom: 1px solid var(--line); }
-    .filter { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; padding: 9px 14px; color: #737373; background: transparent; border: 1px solid transparent; cursor: pointer; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-    .filter span { font-size: 22px; }
-    .filter:hover, .filter.active { color: var(--yellow); border-color: var(--yellow); }
-    .filter.active { background: #202000; }
-    .content-layout { display: grid; grid-template-columns: minmax(0, 1fr) 248px; gap: 22px; margin-top: 22px; }
-    .heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 12px; }
-    .heading h1 { margin: 0; font: 25px "Archivo Black", sans-serif; }
-    .heading p { margin: 0; color: var(--muted); font-size: 12px; }
-    .game-grid { display: grid; grid-template-columns: repeat(4, minmax(130px, 1fr)); gap: 14px; align-content: start; }
-    .game-card { position: relative; aspect-ratio: 635 / 291; overflow: hidden; padding: 0; color: var(--ink); text-align: left; background: #1e1e1e; border: 1px solid #171717; border-radius: 8px; cursor: pointer; transition: border-color .15s, filter .15s; }
-    .game-card:hover, .game-card:focus-visible, .game-card.selected { border: 2px solid var(--yellow); outline: none; filter: brightness(1.15); }
-    .game-art { position: absolute; inset: 0; background-position: center; background-size: cover; }
-    .game-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 45%, rgba(0, 0, 0, .86)); }
-    .game-number { position: absolute; z-index: 1; top: 8px; left: 9px; color: var(--yellow); font-size: 11px; font-weight: 700; }
-    .game-title { position: absolute; z-index: 1; right: 10px; bottom: 8px; left: 10px; font: 15px/1.05 "Archivo Black", sans-serif; }
-    .detail { position: sticky; top: 22px; align-self: start; overflow: hidden; min-height: 480px; background: #151515; border-radius: 8px; }
-    .detail-art { height: 150px; background-position: center; background-size: cover; }
-    .detail-body { padding: 20px; }
-    .detail h2 { margin: 0 0 10px; font: 25px/1.05 "Archivo Black", sans-serif; }
-    .detail p { color: #d0d0d0; font-size: 13px; line-height: 1.45; }
-    .detail-rule { border: 0; border-top: 1px solid #353535; }
-    .detail-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 13px 0; }
-    .detail-tag { padding: 5px 9px; color: #111; background: var(--yellow); border-radius: 12px; font-size: 10px; font-weight: 700; }
-    .launch-button { width: 100%; margin-top: 16px; padding: 13px; color: #111; background: var(--yellow); border: 0; border-radius: 5px; cursor: pointer; font-weight: 700; }
-    .launch-button:hover, .launch-button:focus-visible { background: #fff86d; outline: 2px solid #fff; }
-    .modal-backdrop { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(0, 0, 0, .78); }
-    .modal { width: min(100%, 430px); padding: 24px; color: var(--ink); background: #171717; border: 1px solid #444; border-radius: 8px; box-shadow: 0 20px 80px rgba(0, 0, 0, .6); }
-    .modal-header { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
-    .modal h2 { margin: 0; font: 24px/1.05 "Archivo Black", sans-serif; }
-    .modal p { margin: 8px 0 20px; color: #aaa; font-size: 13px; }
-    .modal-close { padding: 2px 8px; color: #aaa; background: transparent; border: 0; cursor: pointer; font-size: 23px; line-height: 1; }
-    .modal-close:hover, .modal-close:focus-visible { color: var(--yellow); outline: none; }
-    .source-list { display: grid; gap: 9px; }
-    .source-button { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px 14px; color: var(--ink); background: #242424; border: 1px solid #3a3a3a; border-radius: 5px; cursor: pointer; text-align: left; }
-    .source-button:hover, .source-button:focus-visible { color: var(--yellow); border-color: var(--yellow); outline: none; }
-    .source-button small { color: #888; font-size: 11px; }
-    .status { min-height: 20px; margin: 15px 0 0; color: var(--muted); font-size: 12px; }
-    .fallback { padding: 16px; color: var(--muted); border: 1px dashed var(--line); font-size: 13px; }
-    .fallback input { display: block; margin-top: 10px; }
-    [hidden] { display: none !important; }
-    @media (max-width: 1000px) { .content-layout { grid-template-columns: 1fr; } .detail { position: fixed; z-index: 3; right: 18px; bottom: 18px; left: 118px; min-height: 0; } .detail-art { display: none; } .detail-body { display: flex; align-items: center; gap: 16px; padding: 13px 18px; } .detail h2 { flex: 1; margin: 0; font-size: 18px; } .detail p, .detail-rule, .detail-tags { display: none; } .launch-button { width: auto; margin: 0; } }
-    @media (max-width: 640px) { .app { grid-template-columns: 64px minmax(0, 1fr); } .sidebar { padding: 15px 6px; } .brand-mark { width: 43px; height: 43px; margin-bottom: 25px; font-size: 22px; } .side-button { font-size: 8px; } .side-button span:first-child { font-size: 19px; } .content { padding: 15px 12px 100px; } .connection { display: none; } .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .game-title { font-size: 12px; } .detail { right: 10px; bottom: 10px; left: 74px; } .detail-body { padding: 10px 12px; } .detail h2 { font-size: 14px; } .launch-button { padding: 10px; font-size: 12px; } }
-  </style>
+  <link rel="stylesheet" href="./game-launcher.css">
 </head>
 <body>
   <main class="app">
     <aside class="sidebar">
-      <div class="brand-mark" aria-label="Mighty Picker">M</div>
+      <div class="brand-mark" aria-label="Mighty Picker">📦</div>
       <nav class="side-nav" aria-label="Main navigation">
-        <button class="side-button" type="button"><span>⌂</span><span>Home</span></button>
-        <button class="side-button active" type="button"><span>▦</span><span>Library</span></button>
-        <button class="side-button" type="button"><span>★</span><span>Favorites</span></button>
       </nav>
     </aside>
 
@@ -108,7 +21,13 @@
         <div id="controller-status" class="connection">Controller not detected</div>
       </header>
 
-      <nav id="filters" class="filter-strip" aria-label="Filter games"></nav>
+      <div class="filter-strip">
+        <nav id="filters" class="filter-strip" aria-label="Filter games"></nav>
+        <div class="filter-controls">
+          <button id="advanced-filter-button" class="control-button" type="button">Advanced filters</button>
+          <button id="sort-button" class="control-button" type="button">Sort: catalog</button>
+        </div>
+      </div>
 
       <div class="content-layout">
         <section>
@@ -149,276 +68,20 @@
     </section>
   </div>
 
-  <script>
-    const filters = document.querySelector("#filters");
-    const gameGrid = document.querySelector("#game-grid");
-    const launchButton = document.querySelector("#launch");
-    const status = document.querySelector("#status");
-    const catalogFallback = document.querySelector("#catalog-fallback");
-    const catalogFile = document.querySelector("#catalog-file");
-    const search = document.querySelector("#search");
-    const gameCount = document.querySelector("#game-count");
-    const detailArt = document.querySelector("#detail-art");
-    const detailTitle = document.querySelector("#detail-title");
-    const detailDescription = document.querySelector("#detail-description");
-    const detailTags = document.querySelector("#detail-tags");
-    const controllerStatus = document.querySelector("#controller-status");
-    const sourceModal = document.querySelector("#source-modal");
-    const sourceModalTitle = document.querySelector("#source-modal-title");
-    const sourceModalDescription = document.querySelector("#source-modal-description");
-    const sourceList = document.querySelector("#source-list");
-    const sourceModalClose = document.querySelector("#source-modal-close");
-    let catalog;
-    let allGames = [];
-    let visibleGames = [];
-    let selectedGameIndex = 0;
-    let activeFilter = "All games";
-    const metadataByKey = new Map();
-    const artworkCache = new Map();
-    const backgroundCache = new Map();
-    let lastFocusedElement;
-    let gamepads = [];
-    let previousButtons = [];
-    let previousAxes = [0, 0];
+  <div id="advanced-modal" class="modal-backdrop" role="presentation" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="advanced-modal-title">
+      <div class="modal-header">
+        <h2 id="advanced-modal-title">Advanced filters</h2>
+        <button id="advanced-modal-close" class="modal-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div id="advanced-fields" class="advanced-fields"></div>
+      <div class="modal-actions">
+        <button id="advanced-clear" class="control-button" type="button">Clear</button>
+        <button id="advanced-apply" class="launch-button" type="button">Apply filters</button>
+      </div>
+    </section>
+  </div>
 
-    function currentGame() { return visibleGames[selectedGameIndex]; }
-
-    function artworkKey(game) { return `${game.packId}:${game.id}`; }
-
-    function fallbackArtwork(game) {
-      return backgroundCache.get(artworkKey(game)) || "";
-    }
-
-    function slugFor(game) {
-      return game.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    }
-
-
-    function filterList() {
-      const categories = [
-        // drawing, trivia, deceiption, writing, sound, puzzle, speaking, action, roleplay, strategy
-        ["All games", "▦"], 
-        ["Drawing", "✎"],
-        ["Trivia", "?"],
-        ["Deception", "🃏"],
-        ["Writing", ""],
-        ["Sound", ""],
-        ["Puzzle", ""],
-        ["Speaking", ""],
-        ["Action", ""],
-        ["Roleplay", ""],
-        ["Strategy", "♟"]
-      ];
-      filters.replaceChildren(...categories.map(([label, icon]) => {
-        const button = document.createElement("button");
-        button.className = `filter${label === activeFilter ? " active" : ""}`;
-        button.type = "button";
-        button.innerHTML = `<span aria-hidden="true">${icon}</span>${label}`;
-        button.setAttribute("aria-pressed", label === activeFilter);
-        button.addEventListener("click", () => { activeFilter = label; selectedGameIndex = 0; filterList(); renderGames(); });
-        return button;
-      }));
-    }
-
-    function applyFilters() {
-      const term = search.value.trim().toLowerCase();
-      visibleGames = allGames.filter((game) => {
-        const matchesFilter = activeFilter === "All games" || game.type === activeFilter.toLowerCase();
-        return matchesFilter && (!term || `${game.title} ${game.packTitle}`.toLowerCase().includes(term));
-      });
-      if (selectedGameIndex >= visibleGames.length) selectedGameIndex = Math.max(0, visibleGames.length - 1);
-    }
-
-    function renderGames() {
-      applyFilters();
-      gameCount.textContent = `${visibleGames.length} of ${allGames.length} games`;
-      gameGrid.replaceChildren(...visibleGames.map((game, index) => {
-        const card = document.createElement("button");
-        card.className = `game-card${index === selectedGameIndex ? " selected" : ""}`;
-        card.type = "button";
-        card.setAttribute("aria-label", `Select ${game.title}`);
-        card.innerHTML = `<div class="game-art"><span class="game-number">${String(index + 1).padStart(2, "0")}</span><span class="game-title"></span></div>`;
-        card.querySelector(".game-title").textContent = game.title;
-        const art = card.querySelector(".game-art");
-        art.style.backgroundImage = `url("${fallbackArtwork(game)}")`;
-        card.addEventListener("click", () => selectGame(index));
-        return card;
-      }));
-      launchButton.disabled = false;
-      renderDetail();
-      requestAnimationFrame(() => gameGrid.querySelector(".selected")?.scrollIntoView({ block: "nearest", inline: "nearest" }));
-    }
-
-    async function loadAssetManifest() {
-      try {
-        const response = await fetch("./assets/manifest.json");
-        if (!response.ok) return;
-        const manifest = await response.json();
-        Object.entries(manifest).forEach(([key, asset]) => {
-          artworkCache.set(key, asset.path);
-          if (asset.backgroundPath) backgroundCache.set(key, asset.backgroundPath);
-        });
-      } catch { }
-    }
-
-    async function loadMetadata() {
-      try {
-        const response = await fetch("./game-metadata.json");
-        if (!response.ok) return;
-        const metadata = await response.json();
-        metadata.forEach((record) => metadataByKey.set(`${record.packId}:${record.id}`, record));
-      } catch { }
-    }
-
-    function useCatalog(value) {
-      if (!Array.isArray(value?.packs)) throw new Error("Invalid catalog");
-      catalog = value;
-      const entries = catalog.packs.flatMap((pack) => pack.games.map((game) => {
-        const metadata = metadataByKey.get(`${pack.id}:${game.id}`) || {};
-        return { ...game, ...metadata, packTitle: pack.title, packId: pack.id, steamAppId: pack.steamAppId, type: (metadata.gameType || "party").toLowerCase() };
-      }));
-      allGames = [...new Map(entries.map((game) => [game.title.toLowerCase(), game])).values()];
-      allGames.forEach((game) => {
-        game.sources = entries.filter((entry) => entry.title.toLowerCase() === game.title.toLowerCase());
-      });
-      catalogFallback.hidden = true;
-      status.textContent = "";
-      filterList();
-      renderGames();
-    }
-
-    function renderDetail() {
-      const game = currentGame();
-      if (!game) return;
-      detailTitle.textContent = game.title;
-      detailDescription.textContent = `${game.description || "Description unavailable"} ${game.playerCount || "Player count unavailable"} | ${game.duration || "Duration unavailable"} | ${(game.language || ["Language unavailable"]).join(", ")}`;
-      const tags = [game.gameType || game.type, game.packTitle.replace("Jackbox ", ""), ...(game.features || []), "Steam"];
-      detailTags.replaceChildren(...tags.map((tag) => { const element = document.createElement("span"); element.className = "detail-tag"; element.textContent = tag; return element; }));
-      detailArt.style.backgroundImage = `url("${backgroundCache.get(artworkKey(game)) || fallbackArtwork(game)}")`;
-    }
-
-    function selectGame(index) {
-      if (!visibleGames.length) return;
-      selectedGameIndex = (index + visibleGames.length) % visibleGames.length;
-      renderGames();
-    }
-
-    function launchGame() {
-      const game = currentGame();
-      if (!game) return;
-      if (game.sources.length > 1) {
-        openSourceModal(game);
-        return;
-      }
-      launchSource(game.sources[0]);
-    }
-
-    function launchSource(game) {
-      const windowsPath = game.path.replaceAll("/", "\\");
-      const launchUrl = `steam://run/${game.steamAppId}// -launchTo ${windowsPath} -jbg.config isBundle=false`;
-      status.textContent = `Opening ${game.title} in Steam...`;
-      window.location.href = launchUrl;
-    }
-
-    function openSourceModal(game) {
-      lastFocusedElement = document.activeElement;
-      sourceModalTitle.textContent = game.title;
-      sourceModalDescription.textContent = "This game is included in multiple packs. Choose which Steam pack to open.";
-      sourceList.replaceChildren(...game.sources.map((source) => {
-        const button = document.createElement("button");
-        button.className = "source-button";
-        button.type = "button";
-        button.innerHTML = `<span></span><small>Open in Steam →</small>`;
-        button.querySelector("span").textContent = source.packTitle;
-        button.addEventListener("click", () => { closeSourceModal(); launchSource(source); });
-        return button;
-      }));
-      sourceModal.hidden = false;
-      sourceList.querySelector("button")?.focus();
-    }
-
-    function closeSourceModal() {
-      sourceModal.hidden = true;
-      lastFocusedElement?.focus();
-    }
-
-    async function loadCatalog() {
-      try {
-        const response = await fetch("./pack-games.json");
-        if (!response.ok) throw new Error("Catalog request failed");
-        useCatalog(await response.json());
-      } catch {
-        status.textContent = "Choose the catalog JSON file to continue.";
-        catalogFallback.hidden = false;
-      }
-    }
-
-    catalogFile.addEventListener("change", async () => {
-      const file = catalogFile.files[0];
-      if (!file) return;
-      try {
-        useCatalog(JSON.parse(await file.text()));
-      } catch {
-        status.textContent = "That is not a valid pack catalog.";
-      }
-    });
-
-    search.addEventListener("input", () => { selectedGameIndex = 0; renderGames(); });
-
-    launchButton.addEventListener("click", launchGame);
-    sourceModalClose.addEventListener("click", closeSourceModal);
-    sourceModal.addEventListener("click", (event) => { if (event.target === sourceModal) closeSourceModal(); });
-
-    document.addEventListener("keydown", (event) => {
-      if (!catalog || event.target.matches("input")) return;
-      if (!sourceModal.hidden) {
-        if (event.key === "Escape") closeSourceModal();
-        return;
-      }
-      if (["ArrowLeft", "a", "A"].includes(event.key)) selectGame(selectedGameIndex - 1);
-      if (["ArrowRight", "d", "D"].includes(event.key)) selectGame(selectedGameIndex + 1);
-      if (["ArrowUp", "w", "W"].includes(event.key)) selectGame(selectedGameIndex - 4);
-      if (["ArrowDown", "s", "S"].includes(event.key)) selectGame(selectedGameIndex + 4);
-      if (["Enter", " "].includes(event.key)) launchGame();
-      if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", " "].includes(event.key)) event.preventDefault();
-    });
-
-    window.addEventListener("gamepadconnected", (event) => {
-      gamepads[event.gamepad.index] = event.gamepad;
-      controllerStatus.textContent = `${event.gamepad.id.slice(0, 28)} connected`;
-      controllerStatus.classList.add("connected");
-    });
-
-    window.addEventListener("gamepaddisconnected", (event) => {
-      delete gamepads[event.gamepad.index];
-      if (!gamepads.some(Boolean)) {
-        controllerStatus.textContent = "Controller not detected";
-        controllerStatus.classList.remove("connected");
-      }
-    });
-
-    function pollController() {
-      const connected = navigator.getGamepads ? [...navigator.getGamepads()].find(Boolean) : null;
-      if (connected) {
-        gamepads[connected.index] = connected;
-        const buttons = connected.buttons.map((button) => button.pressed);
-        const pressed = (index) => buttons[index] && !previousButtons[index];
-        const axisPressed = (axis, direction) => connected.axes[axis] * direction > .6 && previousAxes[axis] * direction <= .6;
-        if (pressed(14) || axisPressed(0, -1)) selectGame(selectedGameIndex - 1);
-        if (pressed(15) || axisPressed(0, 1)) selectGame(selectedGameIndex + 1);
-        if (pressed(12) || axisPressed(1, -1)) selectGame(selectedGameIndex - 4);
-        if (pressed(13) || axisPressed(1, 1)) selectGame(selectedGameIndex + 4);
-        if (pressed(0)) launchGame();
-        if (pressed(1)) selectGame(selectedGameIndex - 1);
-        previousButtons = buttons;
-        previousAxes = [connected.axes[0] || 0, connected.axes[1] || 0];
-      }
-      requestAnimationFrame(pollController);
-    }
-
-    pollController();
-
-    Promise.all([loadAssetManifest(), loadMetadata()]).then(loadCatalog);
-  </script>
+  <script src="./game-launcher.js"></script>
 </body>
 </html>

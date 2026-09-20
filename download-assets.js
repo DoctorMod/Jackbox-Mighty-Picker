@@ -10,70 +10,12 @@ const utilityPacksUrl = "https://raw.githubusercontent.com/AkiraArtuhaxis/Jackbo
 const utilityAssetsUrl = "https://raw.githubusercontent.com/AkiraArtuhaxis/JackboxUtility-Server-en/main/assets/";
 const delayMs = Number(process.argv[2]) || 500;
 
-const slugOverrides = {
-  "You Don't Know Jack 2015": "you-dont-know-jack-2015",
-  "You Don't Know Jack: Full Stream": "you-dont-know-jack-full-stream",
-  "The Devils and the Details": "the-devils-and-the-details",
-  "Fakin' It": "fakin-it",
-  "Fakin' It All Night Long": "fakin-it-all-night-long",
-  "Tee K.O.": "tee-ko",
-  "Tee K.O. 2": "tee-k-o-2",
-  "The Wheel of Enormous Proportions": "the-wheel-of-enormous-proportions",
-  "The Poll Mine": "the-poll-mine",
-  "Blather 'Round": "blather-round",
-  "Dodo Re Mi": "dodo-re-mi",
-  "We Forgot a Card!": "we-forgot-a-card",
-  "Champ'd Up": "champd-up",
-  "Quiplash 2": "quiplash-2-1",
-  "FixyText": "fixy-text",
-};
-
-function slugFor(title) {
-  return slugOverrides[title] || title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
-
-function findArtwork(html, title) {
-  const imagePattern = /<img[^>]+src=["'](https:\/\/cms-assets\.jackboxgames\.com\/[^"']+)["'][^>]*>/gi;
-  const images = [...html.matchAll(imagePattern)].map((match) => ({
-    url: match[1].replace(/&amp;/g, "&"),
-    tag: match[0]
-  })).filter(({ url }) => /\.(png|jpe?g|webp)(\?|$)/i.test(url));
-  const normalizedTitle = title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-  const titleImage = images.find(({ tag }) => {
-    const alt = tag.match(/alt=["']([^"']+)["']/i)?.[1] || "";
-    return alt.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() === normalizedTitle;
-  });
-  const pageImage = images.find(({ tag }) => /alt=["'][^"']+["']/i.test(tag));
-  return titleImage?.url || pageImage?.url || images[0]?.url;
-}
-
 function normalize(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "");
 }
 
 function normalizeTitle(title) {
   return normalize(title).replace("thejackboxpartystarter", "");
-}
-
-function findIndexArtwork(html, game, pack) {
-  const tiles = [...html.matchAll(/<h3[^>]*class=["']game-tile["'][^>]*>([\s\S]*?)<\/h3>/gi)]
-    .map((match) => {
-      const tile = match[1];
-      const href = tile.match(/<a[^>]+href=["']([^"']+)["']/i)?.[1] || "";
-      const image = tile.match(/<img[^>]+alt=["']([^"']+)["'][^>]+src=["']([^"']+)["']/i);
-      return image ? { href, title: image[1], url: image[2].replace(/&amp;/g, "&") } : null;
-    })
-    .filter(Boolean);
-  const titleKey = normalizeTitle(game.title);
-  const packKey = normalize(pack.title);
-  const exactTitle = (tile) => normalizeTitle(tile.title) === titleKey;
-  const matchesTitle = (tile) => normalizeTitle(tile.title).includes(titleKey);
-  const matchesPack = (tile) => normalizeTitle(tile.href).includes(packKey.replace("jackbox", ""));
-  const match = tiles.find((tile) => exactTitle(tile) && matchesPack(tile))
-    || tiles.find((tile) => matchesTitle(tile) && matchesPack(tile))
-    || tiles.find(exactTitle)
-    || tiles.find(matchesTitle);
-  return match?.url;
 }
 
 function findUtilityGame(utilityPacks, game, pack) {
@@ -88,50 +30,6 @@ function findUtilityGame(utilityPacks, game, pack) {
 
 function findUtilityBackground(utilityGame) {
   return utilityGame?.background ? new URL(utilityGame.background, utilityAssetsUrl).toString() : null;
-}
-
-function cleanText(value) {
-  return value.replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
-}
-
-function detailBlock(html, label) {
-  const match = html.match(new RegExp(`<p[^>]*>${label}</p>[\\s\\S]*?</div>`));
-  return match ? match[0] : "";
-}
-
-function detailValue(html, label) {
-  const block = detailBlock(html, label);
-  const values = [...block.matchAll(/<p[^>]*>(.*?)<\/p>/g)].map((match) => cleanText(match[1]));
-  if (values[1]) return values[1];
-  const plainValue = cleanText(block).replace(label, "").trim();
-  return plainValue || "Unknown";
-}
-
-function extractMetadata(game, pack, html) {
-  const familyBlock = detailBlock(html, "Family Friendly Setting");
-  const moderationBlock = detailBlock(html, "Moderation Settings");
-  const audience = detailValue(html, "Audience Capacity");
-  const features = [];
-  if (familyBlock.includes("circle-check")) features.push("Family friendly");
-  if (moderationBlock.includes("circle-check")) features.push("Moderation");
-  if (audience !== "Unknown" && audience !== "N/A") features.push(`Audience mode: ${audience}`);
-
-  const languageBlock = detailBlock(html, "Languages");
-  const language = [...languageBlock.matchAll(/<span[^>]*>(.*?)<\/span>/g)]
-    .map((match) => cleanText(match[1]))
-    .filter(Boolean);
-
-  return {
-    id: game.id,
-    title: game.title,
-    packId: pack.id,
-    pack: pack.title,
-    playerCount: detailValue(html, "Player Count"),
-    duration: detailValue(html, "Duration"),
-    features,
-    gameType: detailValue(html, "Game Type"),
-    language: language.length ? language : ["Unknown"]
-  };
 }
 
 function fallbackMetadata(game, pack) {

@@ -21,7 +21,7 @@
         { "id": 6, "title": "Earwax", "path": "games/Earwax/Earwax.swf" },
         { "id": 7, "title": "Bidiots", "path": "games/Auction/Auction.swf" },
         { "id": 8, "title": "Bomb Corp", "path": "games/BombInterns/BombInterns.swf" },
-        { "id": 9, "title": "Quiplash", "path": "games/QuiplashXL/QuiplashXL.swf" }
+        { "id": 9, "title": "QuiplashXL", "path": "games/QuiplashXL/QuiplashXL.swf" }
       ]
     },
     {
