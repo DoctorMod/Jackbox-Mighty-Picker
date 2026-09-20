@@ -33,12 +33,6 @@ To run with live reload:
 npm run dev
 ```
 
-To build the executable and installer:
-
-```powershell
-npm run build
-```
-
 ### Browser mode
 
 If you prefer to run it in a browser instead of the desktop app:
@@ -48,6 +42,35 @@ npx http-server --cors -p 8080
 ```
 
 Then open `http://127.0.0.1:8080/`.
+
+## Build instructions
+
+### Prerequisites
+
+- Node.js 18 or newer
+- Rust toolchain (`stable-x86_64-pc-windows-msvc`)
+- Visual Studio C++ Build Tools (Desktop development with C++)
+
+### Steps
+
+1. Install dependencies:
+   ```powershell
+   npm install
+   ```
+
+2. Download game artwork and generate the local manifest:
+   ```powershell
+   node download-assets.js
+   ```
+
+3. Build the release binary and installer:
+   ```powershell
+   npm run build
+   ```
+
+The build output will be placed in:
+- Executable: `src-tauri\target\release\mighty-picker.exe`
+- Installer: `src-tauri\target\release\bundle\nsis\Mighty Picker_1.0.0_x64-setup.exe`
 
 ## Asset updates
 
